@@ -110,7 +110,7 @@ const copy = (done) => {
     ], {
         base: 'source'
     })
-        .pipe(gulp.dest('build/assets'))
+        .pipe(gulp.dest('build'))
     done();
 }
 
