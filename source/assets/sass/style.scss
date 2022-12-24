@@ -1,0 +1,13 @@
+// Global
+@import "./global/mixins.scss";
+@import "./global/variables.scss";
+@import "./global/fonts.scss";
+@import "./global/global.scss";
+// Components
+@import "./components/header.scss";
+@import "./components/main-nav.scss";
+@import "components/promo.scss";
+@import "components/about.scss";
+@import "components/portfolio.scss";
+@import "components/contacts.scss";
+@import "components/footer.scss";

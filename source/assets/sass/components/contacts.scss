@@ -1,0 +1,72 @@
+.contacts {
+  padding: $padding-section;
+  background: $second-main-color;
+
+  @media (min-width: $tablet-width) {
+    padding: $padding-section-tablet;
+  }
+}
+
+.contacts__heading {
+  @include heading-section;
+}
+
+.contacts__list {
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: rem(10px);
+  list-style: none;
+
+  @media (min-width: $tablet-width) {
+    margin: 0 auto;
+    grid-template-columns: min-content min-content min-content;
+    justify-content: center;
+    gap: rem(20px);
+  }
+}
+
+.contacts__item {
+  text-align: center;
+}
+
+.contacts__link {
+  display: inline-block;
+  padding: rem(7px 15px);
+  border: rem(1px) solid $button-color;
+  color: $button-color;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: rem(13px);
+  line-height: 150%;
+  white-space: nowrap;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    margin-right: rem(10px);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  &--mail::before {
+    width: rem(13px);
+    height: rem(10.3px);
+    transform: translateY(rem(1px));
+    background-image: url("../img/icons/mail.svg");
+  }
+
+  &--telegram::before {
+    width: rem(14px);
+    height: rem(12.7px);
+    transform: translateY(rem(2px));
+    background-image: url("../img/icons/telegram.svg");
+  }
+
+  &--insta::before {
+    width: rem(13px);
+    height: rem(13px);
+    transform: translateY(rem(3px));
+    background-image: url("../img/icons/instagram.svg");
+  }
+}

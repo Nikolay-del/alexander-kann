@@ -1,0 +1,44 @@
+@mixin heading-section {
+  position: relative;
+  margin: 0 auto rem(20px);
+  padding: 0 0 rem(18px);
+  font-family: "Playfair Display", serif;
+  font-weight: 500;
+  font-size: rem(22px);
+  line-height: 140%;
+  text-align: center;
+
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    width: 26.2vw;
+    height: rem(1px);
+    background: $heading-color;
+
+    @media (min-width: $tablet-width) {
+      width: 8.2vw;
+      left: rem(-30px);
+      top: rem(19px);
+      bottom: auto;
+      transform: translateX(0);
+    }
+  }
+
+  @media (min-width: $tablet-width) {
+    box-sizing: content-box;
+    margin: 0 0 rem(30px);
+    padding-bottom: 0;
+    padding-left: 7.2vw;
+    text-align: left;
+    font-size: rem(27px);
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: rem(54px);
+    margin-bottom: rem(36px);
+    font-size: rem(30px);
+  }
+}

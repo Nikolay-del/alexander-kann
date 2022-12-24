@@ -1,0 +1,62 @@
+.portfolio {
+  padding: rem($padding-section);
+  background: $main-color;
+
+  @media (min-width: $tablet-width) {
+    padding: rem($padding-section-tablet);
+  }
+}
+
+.portfolio__heading {
+  @include heading-section;
+}
+
+.portfolio__list {
+  display: grid;
+  gap: rem(15px);
+  margin-bottom: rem(25px);
+
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: rem(35px);
+  }
+}
+
+.portfolio__item {
+  overflow: hidden;
+
+  img {
+    display: block;
+    width: 100%;
+    object-fit: cover;
+  }
+}
+
+.portfolio__item-hover {
+  display: none;
+}
+
+.portfolio__link-wrapper {
+  text-align: center;
+}
+
+.portfolio__link {
+  display: inline-block;
+  padding: rem(8px 46px 8px 13px);
+  border: rem(0.7px) solid $button-color;
+  color: $button-color;
+  background: url("../img/icons/arrow-button.svg") no-repeat right rem(13px) center;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: rem(13px);
+  line-height: 150%;
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &:focus {
+    outline: none;
+    border-color: $second-main-color;
+  }
+}

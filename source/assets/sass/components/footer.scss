@@ -1,0 +1,15 @@
+.footer {
+  width: 100%;
+  padding: rem(20px 0);
+  margin: 0 auto;
+  background: $footer-color;
+}
+
+.footer__logo {
+  display: block;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+}

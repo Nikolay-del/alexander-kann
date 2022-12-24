@@ -1,0 +1,183 @@
+.main-nav__button-burger {
+  display: block;
+  position: relative;
+  width: rem(18px);
+  height: rem(5px);
+  background: none;
+  cursor: pointer;
+  border: none;
+  z-index: 2;
+
+  span {
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: rem(1px);
+    background: $button-color;
+    transition: 0.3s all linear;
+
+    &:first-child {
+      top: 0;
+    }
+
+    &:last-child {
+      bottom: 0;
+    }
+  }
+}
+
+.main-nav--closed {
+  .main-nav__container {
+    display: none;
+  }
+}
+
+.main-nav--opened {
+  .main-nav__container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 100vh;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      background: $second-main-color;
+      width: 120vw;
+      height: 100vh;
+      overflow-x: hidden;
+      z-index: -1;
+      animation: animateShutter 0.3s forwards;
+    }
+  }
+
+  .main-nav__button-burger {
+    height: rem(18px);
+
+    span:first-child {
+      top: auto;
+      transform: rotate(45deg);
+    }
+
+    span:last-child {
+      bottom: auto;
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.main-nav__list {
+  margin: 0;
+  padding: 18vh 0 0;
+  list-style: none;
+  animation: animateList 0.6s forwards;
+}
+
+.main-nav__link {
+  display: inline-block;
+  padding: rem(8px 8px 8px 0);
+  text-decoration: none;
+  font-weight: 400;
+  font-size: rem(14px);
+  line-height: 150%;
+  color: $button-color;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    margin-right: rem(10px);
+    width: rem(13px);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &--home::before {
+    background-image: url("../img/icons/home.svg");
+    height: rem(15px);
+  }
+
+  &--object::before {
+    background-image: url("../img/icons/object.svg");
+    height: rem(17.5px);
+  }
+
+  &--portrait::before {
+    background-image: url("../img/icons/portrait.svg");
+    height: rem(14.2px);
+  }
+}
+
+.main-nav__link-tg-wrap {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: animateLink 0.6s forwards;
+}
+
+.main-nav__link-tg {
+  display: inline-block;
+  padding: rem(7px 15px);
+  border: rem(1px) solid $button-color;
+  color: $button-color;
+  white-space: nowrap;
+  text-decoration: none;
+  font-weight: 400;
+  font-size: rem(14px);
+  line-height: 150%;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    margin-right: rem(10px);
+    width: rem(14px);
+    height: rem(12.7px);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url("../img/icons/telegram.svg");
+    transform: translateY(rem(1px));
+  }
+}
+
+@keyframes animateList {
+  from {
+    transform: translateX(100%);
+  }
+
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes animateLink {
+  from {
+    bottom: rem(-100px);
+  }
+
+  to {
+    bottom: 12vh;
+  }
+}
+
+@keyframes animateShutter {
+  from {
+    left: 100%;
+  }
+
+  to {
+    left: rem(-15px);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  @keyframes animateShutter {
+    from {
+      left: 100%;
+    }
+
+    to {
+      left: rem(-50px);
+    }
+  }
+}

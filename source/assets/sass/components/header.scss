@@ -1,0 +1,20 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+}
+
+.header__container {
+  position: relative;
+  padding: rem(25px 0);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header__logo {
+  position: relative;
+  z-index: 1;
+}
